@@ -1,0 +1,740 @@
+[
+  {
+    "ruleId": 1,
+    "description": "Nam giới có sức khỏe loại 1,2,3 không học cao đẳng đại học theo Thông tư 148/2018/TT-BQP",
+    "condition": {
+      "gender": "Nam",
+      "healthClassification": ["1", "2", "3"],
+      "age": { "between": [18, 25] }
+    },
+    "result": "Đủ điều kiện nhập ngũ",
+    "source": "Thông tư 148/2018/TT-BQP, Chương 2, Điều 4"
+  },
+  {
+    "ruleId": 2,
+    "description": "Nam giới có sức khỏe loại 1, 2, 3 học cao đẳng, đại học theo Thông tư 148/2018/TT-BQP",
+    "condition": {
+      "gender": "Nam",
+      "healthClassification": ["1", "2", "3"],
+      "age": { "between": [18, 27] }
+    },
+    "result": "Đủ điều kiện nhập ngũ",
+    "source": "Thông tư 148/2018/TT-BQP, Chương 2, Điều 4"
+  },
+  {
+    "ruleId": 3,
+    "description": "Nam giới bị cận thị trên 1.5 diop",
+    "condition": {
+      "gender": "Nam",
+      "myopiaEyeScore": { "gte": 1.5 }
+    },
+    "result": "Tạm hoãn nghĩa vụ quân sự",
+    "source": "Thông tư 68/2025/TT-BQP, Điều 1"
+  },
+  {
+    "ruleId": 4,
+    "description": "Nam giới có sức khỏe loại 4, 5 hoặc 6",
+    "condition": {
+      "gender": "Nam",
+      "healthClassification": ["4", "5", "6"]
+    },
+    "result": "Tạm hoãn nghĩa vụ quân sự",
+    "source": "Thông tư 105/2023/TT-BQP, Chương 2, Điều 4"
+  },
+  {
+    "ruleId": 5,
+    "description": "Nam giới bị viễn thị mọi mức độ",
+    "condition": {
+      "gender": "Nam",
+      "astigmatismEye": true
+    },
+    "result": "Không đủ điều kiện nhập ngũ (miễn nghĩa vụ)",
+    "source": "Thông tư 68/2025/TT-BQP, Chương 2, Điều 4"
+  },
+  {
+    "ruleId": 6,
+    "description": "Nam giới có chỉ số bmi nhỏ hơn 18.0 hoặc lớn hơn 29.9",
+    "condition": {
+      "gender": "Nam",
+      "bmi": { "or": [{ "lt": 18.0 }, { "gt": 29.9 }] }
+    },
+    "result": "Không đủ điều kiện nhập ngũ (miễn nghĩa vụ)",
+    "source": "Thông tư 68/2025/TT-BQP, Chương 2, Điều 4"
+  },
+  {
+    "ruleId": 7,
+    "description": "Nam giới có bệnh nằm trong danh mục không đủ điều kiện nhập ngũ (bệnh lý nghiêm trọng, mã bệnh từ PL I)",
+    "condition": {
+      "gender": "Nam",
+      "diseaseCodeInExclusionList": true
+    },
+    "result": "Không đủ điều kiện nhập ngũ (miễn nghĩa vụ)",
+    "source": "Thông tư 105/2023/TT-BQP, Phụ lục I, Mục III"
+  },
+  {
+    "ruleId": 8,
+    "description": "Nam đang học đại học, cao đẳng chính quy",
+    "condition": {
+      "gender": "Nam",
+      "educationStatus": "Đang học đại học/cao đẳng chính quy"
+    },
+    "result": "Tạm hoãn nghĩa vụ quân sự",
+    "source": "Thông tư 148/2018/TT-BQP, Chương 2, Điều 5"
+  },
+  {
+    "ruleId": 9,
+    "description": "Nam là lao động duy nhất phải trực tiếp nuôi dưỡng người thân không còn khả năng lao động",
+    "condition": {
+      "gender": "Nam",
+      "isSoleBreadwinner": true,
+      "dependentsUnableToWork": true
+    },
+    "result": "Tạm hoãn nghĩa vụ quân sự",
+    "source": "Thông tư 148/2018/TT-BQP, Chương 2, Điều 5"
+  },
+  {
+    "ruleId": 10,
+    "description": "Nam là cán bộ, công chức, viên chức hoặc thanh niên xung phong được điều động công tác vùng đặc biệt khó khăn",
+    "condition": {
+      "gender": "Nam",
+      "jobCategory": "Cán bộ/vùng đặc biệt khó khăn"
+    },
+    "result": "Miễn nghĩa vụ quân sự",
+    "source": "Thông tư 148/2018/TT-BQP, Chương 2, Điều 5"
+  },
+  {
+    "ruleId": 11,
+    "description": "Nam có anh/chị/em ruột là liệt sĩ hoặc con liệt sĩ",
+    "condition": {
+      "gender": "Nam",
+      "familyRelation": "Con hoặc anh/em ruột liệt sĩ"
+    },
+    "result": "Miễn nghĩa vụ quân sự",
+    "source": "Thông tư 148/2018/TT-BQP, Chương 2, Điều 5"
+  },
+  {
+    "ruleId": 12,
+    "description": "Nam là con thương binh hoặc liệt sĩ hạng 1",
+    "condition": {
+      "gender": "Nam",
+      "familyRelation": "Con thương binh/liệt sĩ hạng 1"
+    },
+    "result": "Miễn nghĩa vụ quân sự",
+    "source": "Thông tư 148/2018/TT-BQP, Chương 2, Điều 5"
+  },
+  {
+    "ruleId": 13,
+    "description": "Nam là con thương binh hạng 2 hoặc bệnh binh hoặc người nhiễm chất độc da cam suy giảm lao động từ 81%",
+    "condition": {
+      "gender": "Nam",
+      "familyRelation": "Con thương binh hạng 2/bệnh binh/người nhiễm chất độc da cam",
+      "laborDecline": { "gte": 81 }
+    },
+    "result": "Miễn nghĩa vụ quân sự",
+    "source": "Thông tư 148/2018/TT-BQP, Chương 2, Điều 5"
+  },
+  {
+    "ruleId": 14,
+    "description": "Nam là làm công tác cơ yếu không phải là quân nhân, công an",
+    "condition": {
+      "gender": "Nam",
+      "jobCategory": "Công tác cơ yếu",
+      "milOrPolRelated": false
+    },
+    "result": "Miễn nghĩa vụ quân sự",
+    "source": "Thông tư 148/2018/TT-BQP, Chương 2, Điều 5"
+  },
+  {
+    "ruleId": 15,
+    "description": "Nam nghiện ma túy, nhiễm HIV, nhiểm AIDS",
+    "condition": {
+      "gender": "Nam",
+      "relatedToHeroinAndHIV": true
+    },
+    "result": "Không đủ điều kiện nhập ngũ (miễn nghĩa vụ)",
+    "source": "Thông tư 148/2018/TT-BQP, Chương 2, Điều 4"
+  },
+  {
+    "ruleId": 16,
+    "description": "Nam trình độ văn hóa < 8",
+    "condition": {
+      "gender": "Nam",
+      "academicStandard": { "lte": 7 }
+    },
+    "result": "Không đủ điều kiện nhập ngũ (miễn nghĩa vụ)",
+    "source": "Thông tư 148/2018/TT-BQP, Chương 2, Điều 4"
+  },
+  {
+    "ruleId": 17,
+    "description": "Nam trong gia đình bị thiệt hại nặng nề về tài sản do tai nạn, thiên tai, dịch bệnh nguy hiểm",
+    "condition": {
+      "gender": "Nam",
+      "inCrucialFinalcialConditionByDisaster": true
+    },
+    "result": "Tạm hoãn nghĩa vụ quân sự",
+    "source": "Thông tư 148/2018/TT-BQP, Chương 2, Điều 5"
+  },
+  {
+    "ruleId": 18,
+    "description": "Nam là con của bệnh binh, người nhiễm chất độc da cam suy giảm lao động 61% tới 80%",
+    "condition": {
+      "gender": "Nam",
+      "familyRelation": "Con bệnh binh, người nhiễm chất độc da cam",
+      "laborDecline": { "between": [61, 80] }
+    },
+    "result": "Tạm hoãn nghĩa vụ quân sự",
+    "source": "Thông tư 148/2018/TT-BQP, Chương 2, Điều 5"
+  },
+  {
+    "ruleId": 19,
+    "description": "Nam có anh/chị ruột là hạ sĩ quan, binh sĩ tại ngũ, chiến sĩ thực hiện nghĩa vụ Công an nhân dân",
+    "condition": {
+      "gender": "Nam",
+      "familyRelation": "anh/chị ruột là hạ sĩ quan, binh sĩ tại ngũ, chiến sĩ thực hiện nghĩa vụ Công an nhân dân"
+    },
+    "result": "Tạm hoãn nghĩa vụ quân sự",
+    "source": "Thông tư 148/2018/TT-BQP, Chương 2, Điều 5"
+  },
+  {
+    "ruleId": 20,
+    "description": "Nam thuộc diện di dân, giãn dân 03 năm đầu đến các xã đặc biệt khó khăn",
+    "condition": {
+      "gender": "Nam",
+      "isResettlementCase": true
+    },
+    "result": "Tạm hoãn nghĩa vụ quân sự",
+    "source": "Thông tư 148/2018/TT-BQP, Chương 2, Điều 5"
+  },
+  {
+    "ruleId": 101,
+    "description": "Chiều cao Nam ≥ 163 cm",
+    "condition": {
+      "gender": "Nam",
+      "height_cm": { "gte": 163 }
+    },
+    "result": {
+      "heightScore": 1,
+      "heightClass": "Loại 1"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – Thể lực"
+  },
+  {
+    "ruleId": 102,
+    "description": "Chiều cao Nam từ 160–162 cm",
+    "condition": {
+      "gender": "Nam",
+      "height_cm": { "between": [160, 162] }
+    },
+    "result": {
+      "heightScore": 2,
+      "heightClass": "Loại 2"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – Thể lực"
+  },
+  {
+    "ruleId": 103,
+    "description": "Chiều cao Nam từ 157–159 cm",
+    "condition": {
+      "gender": "Nam",
+      "height_cm": { "between": [157, 159] }
+    },
+    "result": {
+      "heightScore": 3,
+      "heightClass": "Loại 3"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I"
+  },
+  {
+    "ruleId": 104,
+    "description": "Chiều cao Nam từ 155–156 cm",
+    "condition": {
+      "gender": "Nam",
+      "height_cm": { "between": [155, 156] }
+    },
+    "result": {
+      "heightScore": 4,
+      "heightClass": "Loại 4"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I"
+  },
+  {
+    "ruleId": 105,
+    "description": "Chiều cao Nam từ 152–154 cm",
+    "condition": {
+      "gender": "Nam",
+      "height_cm": { "between": [152, 154] }
+    },
+    "result": {
+      "heightScore": 5,
+      "heightClass": "Loại 5"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I"
+  },
+  {
+    "ruleId": 106,
+    "description": "Chiều cao Nam < 152 cm",
+    "condition": {
+      "gender": "Nam",
+      "height_cm": { "lt": 152 }
+    },
+    "result": {
+      "heightScore": 6,
+      "heightClass": "Loại 6"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I"
+  },
+ {
+    "ruleId": 111,
+    "description": "Cân nặng Nam 40kg",
+    "condition": {
+      "gender": "Nam",
+      "weight_kg": { "equal": 40 }
+    },
+    "result": {
+      "weightScore": 5,
+      "weightClass": "Loại 5"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I"
+  },
+  {
+    "ruleId": 112,
+    "description": "Cân nặng Nam < 40 kg",
+    "condition": {
+      "gender": "Nam",
+      "weight_kg": { "lt": 40 }
+    },
+    "result": {
+      "weightScore": 6,
+      "weightClass": "Loại 6"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I"
+  },
+  {
+    "ruleId": 110,
+    "description": "Cân nặng Nam từ 41–42 kg",
+    "condition": {
+      "gender": "Nam",
+      "weight_kg": { "between": [41, 42] }
+    },
+    "result": {
+      "weightScore": 4,
+      "weightClass": "Loại 4"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I"
+  },
+  {
+    "ruleId": 109,
+    "description": "Cân nặng Nam từ 43–46 kg",
+    "condition": {
+      "gender": "Nam",
+      "weight_kg": { "between": [43, 46] }
+    },
+    "result": {
+      "weightScore": 3,
+      "weightClass": "Loại 3"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – Thể lực"
+  },
+  {
+    "ruleId": 108,
+    "description": "Cân nặng Nam từ 47–50 kg",
+    "condition": {
+      "gender": "Nam",
+      "weight_kg": { "between": [47, 50] }
+    },
+    "result": {
+      "weightScore": 2,
+      "weightClass": "Loại 2"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I"
+  },
+  {
+    "ruleId": 107,
+    "description": "Cân nặng Nam ≥ 51 kg",
+    "condition": {
+      "gender": "Nam",
+      "weight_kg": { "gte": 51 }
+    },
+    "result": {
+      "weightScore": 1,
+      "weightClass": "Loại 1"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I"
+  },
+  {
+    "ruleId": 113,
+    "description": "Vòng ngực Nam ≥ 81 cm",
+    "condition": {
+      "gender": "Nam",
+      "chest_cm": { "gte": 81 }
+    },
+    "result": {
+      "chestScore": 1,
+      "chestClass": "Loại 1"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I"
+  },
+  {
+    "ruleId": 114,
+    "description": "Vòng ngực Nam 78–80 cm",
+    "condition": {
+      "gender": "Nam",
+      "chest_cm": { "between": [78, 80] }
+    },
+    "result": {
+      "chestScore": 2,
+      "chestClass": "Loại 2"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I"
+  },
+  {
+    "ruleId": 115,
+    "description": "Vòng ngực Nam 75–77cm",
+    "condition": {
+      "gender": "Nam",
+      "chest_cm": { "between": [75, 77] }
+    },
+    "result": {
+      "chestScore": 3,
+      "chestClass": "Loại 3"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I"
+  },
+  {
+    "ruleId": 116,
+    "description": "Vòng ngực Nam 73–74 cm",
+    "condition": {
+      "gender": "Nam",
+      "chest_cm": { "between": [73, 74] }
+    },
+    "result": {
+      "chestScore": 4,
+      "chestClass": "Loại 4"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I"
+  },
+  {
+    "ruleId": 117,
+    "description": "Vòng ngực Nam 71–72 cm",
+    "condition": {
+      "gender": "Nam",
+      "chest_cm": { "between": [71, 72] }
+    },
+    "result": {
+      "chestScore": 5,
+      "chestClass": "Loại 5"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I"
+  },
+  {
+    "ruleId": 118,
+    "description": "Vòng ngực Nam <= 70 cm",
+    "condition": {
+      "gender": "Nam",
+      "chest_cm": { "lte": 70 }
+    },
+    "result": {
+      "chestScore": 6,
+      "chestClass": "Loại 6"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I"
+  },
+  {
+    "ruleId": 119,
+    "description": "BMI Nam trong khoảng 18.5–24.9",
+    "condition": {
+      "gender": "Nam",
+      "bmi": { "between": [18.5, 24.9] }
+    },
+    "result": {
+      "bmiScore": 1,
+      "bmiClass": "Loại 1"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I – BMI theo WHO"
+  },
+  {
+    "ruleId": 120,
+    "description": "BMI Nam trong khoảng 25.0-26.9",
+    "condition": {
+      "gender": "Nam",
+      "bmi": { "between": [25.0, 26.9] }
+    },
+    "result": {
+      "bmiScore": 2,
+      "bmiClass": "Loại 2"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I – BMI theo WHO"
+  },
+  {
+    "ruleId": 121,
+    "description": "BMI Nam từ 27.0–29.9",
+    "condition": {
+      "gender": "Nam",
+      "bmi": { "between": [27.0, 29.9] }
+    },
+    "result": {
+      "bmiScore": 3,
+      "bmiClass": "Loại 3"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I – BMI theo WHO"
+  },
+  {
+    "ruleId": 122,
+    "description": "BMI Nam <18.5",
+    "condition": {
+      "gender": "Nam",
+      "bmi": { "lt": 18.5 }
+    },
+    "result": {
+      "bmiScore": 4,
+      "bmiClass": "Loại 4"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I – BMI theo WHO"
+  },
+  {
+    "ruleId": 123,
+    "description": "BMI Nam trong khoảng 30.0-34.9",
+    "condition": {
+      "gender": "Nam",
+      "bmi": { "between": [30.0, 34.9] }
+    },
+    "result": {
+      "bmiScore": 4,
+      "bmiClass": "Loại 4"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I – BMI theo WHO"
+  },
+  {
+    "ruleId": 124,
+    "description": "BMI Nam 35.0-39.9",
+    "condition": {
+      "gender": "Nam",
+      "bmi": { "between": [35.0, 39.9] }
+    },
+    "result": {
+      "bmiScore": 5,
+      "bmiClass": "Loại 5"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I – BMI theo WHO"
+  },
+  {
+    "ruleId": 125,
+    "description": "BMI Nam từ 40.0",
+    "condition": {
+      "gender": "Nam",
+      "bmi": { "gte": 40.0 }
+    },
+    "result": {
+      "bmiScore": 6,
+      "bmiClass": "Loại 6"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I – BMI theo WHO"
+  },
+  {
+    "ruleId": 200,
+    "description": "Mắt phải 10/10",
+    "condition": {
+      "gender": "Nam",
+      "right_eye_no_glasses": { "eq": 10 }
+    },
+    "result": {
+      "eyeScore": 1,
+      "eyeClass": "Loại 1"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I - phần 1"
+  },
+  {
+    "ruleId": 201,
+    "description": "Tổng thị lực 19/10",
+    "condition": {
+      "gender": "Nam",
+      "total_eyes_no_glasses": { "eq": 19 }
+    },
+    "result": {
+      "eyeScore": 1,
+      "eyeClass": "Loại 1"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I - phần 1"
+  },
+  {
+    "ruleId": 202,
+    "description": "Tổng thị lực 18/10",
+    "condition": {
+      "gender": "Nam",
+      "total_eyes_no_glasses": { "eq": 18 }
+    },
+    "result": {
+      "eyeScore": 2,
+      "eyeClass": "Loại 2"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I - phần 1"
+  },
+  {
+    "ruleId": 203,
+    "description": "Mắt phải 9/10",
+    "condition": {
+      "gender": "Nam",
+      "right_eye_no_glasses": { "eq": 9 }
+    },
+    "result": {
+      "eyeScore": 3,
+      "eyeClass": "Loại 3"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I - phần 1"
+  },
+  {
+    "ruleId": 204,
+    "description": "Tổng thị lực 17/10",
+    "condition": {
+      "gender": "Nam",
+      "total_eyes_no_glasses": { "eq": 17 }
+    },
+    "result": {
+      "eyeScore": 3,
+      "eyeClass": "Loại 3"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I - phần 1"
+  },
+  {
+    "ruleId": 205,
+    "description": "Mắt phải 8/10",
+    "condition": {
+      "gender": "Nam",
+      "right_eye_no_glasses": { "eq": 8 }
+    },
+    "result": {
+      "eyeScore": 4,
+      "eyeClass": "Loại 4"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I - phần 1"
+  },
+  {
+    "ruleId": 206,
+    "description": "Tổng thị lực 16/10",
+    "condition": {
+      "gender": "Nam",
+      "total_eyes_no_glasses": { "eq": 16 }
+    },
+    "result": {
+      "eyeScore": 4,
+      "eyeClass": "Loại 4"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I - phần 1"
+  },
+  {
+    "ruleId": 207,
+    "description": "Mắt phải 6–7/10",
+    "condition": {
+      "gender": "Nam",
+      "right_eye_no_glasses": { "between": [6, 7] }
+    },
+    "result": {
+      "eyeScore": 5,
+      "eyeClass": "Loại 5"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I - phần 1"
+  },
+  {
+    "ruleId": 208,
+    "description": "Tổng thị lực 13–15/10",
+    "condition": {
+      "gender": "Nam",
+      "total_eyes_no_glasses": { "between": [13, 15] }
+    },
+    "result": {
+      "eyeScore": 5,
+      "eyeClass": "Loại 5"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I - phần 1"
+  },
+  {
+    "ruleId": 209,
+    "description": "Mắt phải 1–5/10",
+    "condition": {
+      "gender": "Nam",
+      "right_eye_no_glasses": { "between": [1, 5] }
+    },
+    "result": {
+      "eyeScore": 6,
+      "eyeClass": "Loại 6"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I - phần 1"
+  },
+  {
+    "ruleId": 210,
+    "description": "Tổng thị lực 6–12/10",
+    "condition": {
+      "gender": "Nam",
+      "total_eyes_no_glasses": { "between": [6, 12] }
+    },
+    "result": {
+      "eyeScore": 6,
+      "eyeClass": "Loại 6"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I - phần 1"
+  },
+  {
+    "ruleId": 211,
+    "description": "Cận thị nhẹ: myopia < 1.5D — được đo chỉnh kính (có thể +1 cấp nếu sau chỉnh đạt yêu cầu)",
+    "condition": {
+      "gender": "Nam",
+      "myopia_diopter": { "lt": 1.5 }
+    },
+    "result": {
+      "myopiaEyeScore": null,
+      "canBeCorrectedWithGlasses": true,
+      "promotionLevels": 1
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I - phần 1"
+  },
+  {
+    "ruleId": 212,
+    "description": "Loạn thị sinh lý hoặc < 1.0D → Loại 2",
+    "condition": {
+      "gender": "Nam",
+      "astigmatism_diopter": { "lt": 1.0 }
+    },
+    "result": {
+      "astigmatismEyeScore": 2,
+      "astigmatismClass": "Loại 2"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I - phần 1"
+  },
+  {
+    "ruleId": 213,
+    "description": "Loạn thị ≥ 1.0D → Loại 3",
+    "condition": {
+      "gender": "Nam",
+      "astigmatism_diopter": { "gte": 1.0 }
+    },
+    "result": {
+      "astigmatismEyeScore": 3,
+      "astigmatismClass": "Loại 3"
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I - phần 1"
+  },
+  {
+    "ruleId": 214,
+    "description": "Loạn thị đã phẫu thuật — đo lại; +1 cấp",
+    "condition": {
+      "gender": "Nam",
+      "hasRefractiveSurgeryHistory": true
+    },
+    "result": {
+      "promotionLevels": 1
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I - phần 1"
+  },
+  {
+    "ruleId": 215,
+    "description": "Loạn thị đã khỏi/đã được điều trị (astigmatism_resolved=true) — đo lại và được +1",
+    "condition": {
+      "gender": "Nam",
+      "astigmatism_resolved": true
+    },
+    "result": {
+      "promotionLevels": 1
+    },
+    "source": "TT105/2023/TT-BQP – Phụ lục I – mục I - phần 1"
+  }
+]
