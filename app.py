@@ -231,6 +231,7 @@ with col2:
     left_eye = st.selectbox("Mắt trái /10", options=list(range(0, 11)), index=10)
     total_eye = right_eye + left_eye
     myopia = st.slider("Cận thị (Diop)", 0.0, 10.0, 0.0, 0.25)
+    hyperopia = st.slider("Viễn thị (Diop)", 0.0, 10.0, 0.0, 0.25)
     astigmatism = st.slider("Loạn thị (Diop)", 0.0, 5.0, 0.0, 0.25)
     has_surgery = st.checkbox("Đã phẫu thuật khúc xạ (LASIK, SMILE...)")
     has_correction = False
@@ -287,6 +288,8 @@ if st.button("KIỂM TRA NGHĨA VỤ QUÂN SỰ", type="primary", use_container_
         safe_add(engine, "myopiaEyeScore", myopia)  # Thêm cả myopiaEyeScore
         if has_correction:
             safe_add(engine, "hasCorrectionGlasses", True)
+    if hyperopia > 0:
+        safe_add(engine, "hyperopia_diopter", hyperopia)
     
     if astigmatism > 0: 
         safe_add(engine, "astigmatism_diopter", astigmatism)
@@ -346,6 +349,7 @@ if st.button("KIỂM TRA NGHĨA VỤ QUÂN SỰ", type="primary", use_container_
     st.write(f"Mắt trái: {left_eye}/10")
     st.write(f"Tổng thị lực: {total_eye}/20")
     st.write(f"Cận thị: {myopia} Diop")
+    st.write(f"Viễn thị: {hyperopia} Diop")
     st.write(f"Loạn thị: {astigmatism} Diop")
     if has_surgery:
         st.write("Đã phẫu thuật khúc xạ")
@@ -412,5 +416,3 @@ if st.button("KIỂM TRA NGHĨA VỤ QUÂN SỰ", type="primary", use_container_
             with st.expander(f"Luật {r['ruleId']}: {r['description']}"):
                 st.write(f"**Kết quả:** {r['result']}")
                 st.caption(f"**Nguồn:** {r['source']}")
-
-    

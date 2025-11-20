@@ -46,7 +46,7 @@
     "description": "Nam giới bị viễn thị mọi mức độ",
     "condition": {
       "gender": "Nam",
-      "astigmatismEye": true
+      "hyperopia_diopter": { "gt": 0 }
     },
     "result": "Không đủ điều kiện nhập ngũ (miễn nghĩa vụ)",
     "source": "Thông tư 68/2025/TT-BQP, Chương 2, Điều 4"
